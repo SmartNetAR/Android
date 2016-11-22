@@ -38,7 +38,7 @@
         android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:inputType="text|textMultiLine"
         android:hint="@string/escribe_la_nota"
         android:gravity="top"
         android:ems="10"
