@@ -43,9 +43,13 @@ public class MainActivity extends AppCompatActivity {
             }
             Pedido pedido = getItem(position);
             TextView titulo = (TextView) result.findViewById(R.id.titulo) ;
-            titulo.setText(pedido.getCliente());
+            titulo.setText(
+                    pedido.getCliente().toString() + "  $ " +
+                    (String) String.valueOf(pedido.getImporteTotal())
+            ) ;
             TextView resumen = (TextView) result.findViewById(R.id.resumen);
-            resumen.setText(((String) String.valueOf(pedido.getImporteTotal()))) ;//.replace("\n", " "));
+            resumen.setText( pedido.Resumen() ) ;
+                    //(String) String.valueOf(pedido.getImporteTotal())) ;//.replace("\n", " "));
             return result ;
         }
     }
