@@ -8,17 +8,17 @@ import java.util.ArrayList;
 
 public class Pedido {
     private int id ;
-    private Cliente cliente ;
+    private String cliente ;
     private static ArrayList<Articulo> articulos ;
     private float importeTotal ;
 
-    public Pedido(int id, Cliente cliente) {
+    public Pedido(int id, String cliente) {
         this.id = id;
         this.cliente = cliente;
         this.importeTotal = 0;
     }
 
-    public Cliente getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
@@ -38,7 +38,7 @@ public class Pedido {
         return importeTotal;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
@@ -52,6 +52,6 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return cliente.getNombre().toString();
+        return cliente;
     }
 }

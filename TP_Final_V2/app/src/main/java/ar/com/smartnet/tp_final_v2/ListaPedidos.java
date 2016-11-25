@@ -19,12 +19,12 @@ public class ListaPedidos {
         return pedidos ;
     }
 
-    public static void nueva(int id, Cliente cliente) {
+    public static void nueva(int id, String cliente) {
         Pedido pedido = new Pedido(id, cliente);
         pedidos.add( pedido );
     }
 
-    public static void modifica(int id, Cliente cliente, float importe ) {
+    public static void modifica(int id, String cliente, float importe ) {
         Pedido pedido = pedidos.get( id );
         pedido.setCliente( cliente );
         pedido.setImporteTotal( importe );
@@ -33,8 +33,8 @@ public class ListaPedidos {
     public static ArrayList<Pedido> loadPedidos() {
         ArrayList<Pedido> resultado = new ArrayList<>() ;
 
-        resultado.add(new Pedido(1, new Cliente(1, "leo", "R. de Escalada" , "223-4213264") )  ); ;
-        resultado.add(new Pedido(2, new Cliente(2, "dai", "Necochea" , "223-5239845") )  ); ;
+        resultado.add(new Pedido(1, "Leo Casales"  )) ;
+        resultado.add(new Pedido(2, "Dai Sanchez" )) ;
 
         return resultado ;
     }
