@@ -1,124 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_edita_pedido"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ar.com.smartnet.tp_final_v2.EditaPedidoActivity">
 
-    <EditText
-        android:id="@+id/editCliente"
-        android:layout_width="wrap_content"
-        android:layout_height="?attr/listPreferredItemHeight"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="@string/client"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        />
-
-    <Button
-        android:text="..."
-        android:layout_width="wrap_content"
-        android:layout_height="?attr/listPreferredItemHeight"
-        android:layout_alignParentTop="true"
-        android:id="@+id/button"
-        android:layout_above="@+id/separador1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-
-        />
-
-    <View
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/editCliente"
-        android:background="#2e000000"
-        android:id="@+id/separador1"
-        />
+        android:layout_height="match_parent">
 
 
     <LinearLayout
-        android:id="@+id/linear1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="?attr/listPreferredItemHeight"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" >
+        android:layout_height="?attr/listPreferredItemHeight">
 
         <EditText
-                android:id="@+id/editCodigo"
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/listPreferredItemHeight"
-                android:layout_below="@id/separador1"
-                android:hint="@string/code"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtCliente"
+            android:hint="@string/client"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
             />
-
-        <EditText
-                android:id="@+id/editCantidad"
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/listPreferredItemHeight"
-                android:hint="@string/cant"
-                android:layout_below="@+id/separador1"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:layout_toLeftOf="@+id/editImporte"
-                android:layout_toRightOf="@+id/editCodigo"
-                android:layout_toEndOf="@+id/editCodigo"
-                android:layout_weight="1"
-            />
-
-        <EditText
-                android:id="@+id/editImporte"
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/listPreferredItemHeight"
-                android:hint="@string/amount"
-                android:layout_below="@+id/separador1"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:layout_toLeftOf="@+id/btnAdd"
-                android:layout_weight="1"
-            />
-
         <Button
-                android:text="+"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/button"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/btnAdd"
-                android:layout_above="@+id/listPedido"
-                android:layout_weight="1"
-                android:onClick="OnAddArticulo"
+            android:id="@+id/btnCliente"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Buscar"
+            android:layout_weight="3"
             />
+
+
     </LinearLayout>
 
-
-    <View
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/linear1"
-        android:background="#2e000000"
-        android:id="@+id/separador2"
-        />
+        android:layout_height="?attr/listPreferredItemHeight">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtCodigo"
+            android:hint="@string/code"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtCantidad"
+            android:hint="@string/cant"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtImporte"
+            android:hint="@string/amount"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            />
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/add"
+            android:layout_weight="1"
+            />
+
+
+
+    </LinearLayout>
 
     <ListView
-        android:id="@+id/listPedido"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/editCliente"
-        android:layout_above="@+id/linear1">
-    </ListView>
+        android:id="@+id/lista_articulos_pedido" />
 
-
-
+    </LinearLayout>
 </RelativeLayout>

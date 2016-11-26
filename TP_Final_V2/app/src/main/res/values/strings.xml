@@ -7,4 +7,6 @@
     <string name="cant">Cantidad</string>
     <string name="amount">Importe</string>
     <string name="save">Guardar</string>
+    <string name="Buscar">Buscar</string>
+    <string name="add">Agregar</string>
 </resources>

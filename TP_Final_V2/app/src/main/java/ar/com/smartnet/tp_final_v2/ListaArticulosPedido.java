@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by leo on 26/11/2016.
  */
 
-public class ListaArticulos {
+public class ListaArticulosPedido {
     private static ArrayList<Articulo> articulos ;
 
     public static ArrayList<Articulo> get() {

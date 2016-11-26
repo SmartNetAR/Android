@@ -45,4 +45,8 @@ public class ListaPedidos {
 
         return resultado ;
     }
+
+    public static Pedido getPedido(int pos){
+        return pedidos.get(pos);
+    }
 }
