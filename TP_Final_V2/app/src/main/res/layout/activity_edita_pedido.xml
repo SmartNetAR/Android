@@ -98,6 +98,7 @@
                 android:id="@+id/btnAdd"
                 android:layout_above="@+id/listPedido"
                 android:layout_weight="1"
+                android:onClick="OnAddArticulo"
             />
     </LinearLayout>
 

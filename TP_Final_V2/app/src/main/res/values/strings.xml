@@ -6,4 +6,5 @@
     <string name="code">Código</string>
     <string name="cant">Cantidad</string>
     <string name="amount">Importe</string>
+    <string name="save">Guardar</string>
 </resources>
