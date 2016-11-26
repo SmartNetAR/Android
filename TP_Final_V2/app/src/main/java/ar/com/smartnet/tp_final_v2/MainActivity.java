@@ -1,5 +1,6 @@
 package ar.com.smartnet.tp_final_v2;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int NUEVO_PEDIDO = 0;
+    public static final int EDITA_PEDIDO = 1;
+
     private ListView lista_pedidos ;
     private PedidoAdapter adapter ;
 
@@ -25,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         lista_pedidos = (ListView) findViewById(R.id.lista_pedidos) ;
         lista_pedidos.setAdapter( adapter );
+    }
+
+    public void onNuevoPedido(View view) {
+        Intent intent = new Intent(this, EditaPedidoActivity.class);
+        startActivityForResult(intent, NUEVO_PEDIDO);
     }
 
     private class PedidoAdapter extends ArrayAdapter<Pedido> {

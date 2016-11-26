@@ -5,5 +5,5 @@
     <string name="client">Cliente</string>
     <string name="code">Código</string>
     <string name="cant">Cantidad</string>
-    <string name="cost">Precio</string>
+    <string name="amount">Importe</string>
 </resources>
