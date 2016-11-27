@@ -32,8 +32,14 @@ public class ListaArticulosPedido {
 
     public static ArrayList<Articulo> loadArticulos() {
         ArrayList<Articulo> resultado = new ArrayList<>() ;
+
+        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+
         /*
-        ArrayList<Articulo> articulos = new ArrayList<>() ;
 
         articulos.add(new Articulo("cod1", "articulo 1", 2.0f, 12.20f ));
         articulos.add(new Articulo("cod3", "articulo 3", 2.0f, 15.20f ));
@@ -43,8 +49,9 @@ public class ListaArticulosPedido {
         articulos2.add(new Articulo("cod2", "teclado USB", 2.0f, 12.20f ));
         articulos2.add(new Articulo("cod4", "mouse USB", 1.0f, 9.20f ));
         resultado.add(new Pedido( 2 , new Cliente( 2 , "Tizi Casales", "Mar del Plata", "470-1520" ), articulos2  ) ) ;
-        */
 
+        */
         return resultado ;
     }
+
 }
