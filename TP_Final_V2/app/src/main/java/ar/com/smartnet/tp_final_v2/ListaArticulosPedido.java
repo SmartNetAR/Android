@@ -9,7 +9,8 @@ import java.util.ArrayList;
 public class ListaArticulosPedido {
     private static ArrayList<Articulo> articulos ;
 
-    public static ArrayList<Articulo> get() {
+    public static ArrayList<Articulo> get( Pedido pedido ) {
+        articulos = pedido.getArticulos () ;
         if (articulos == null ) {
             articulos = loadArticulos();
         }
@@ -31,13 +32,11 @@ public class ListaArticulosPedido {
     }
 
     public static ArrayList<Articulo> loadArticulos() {
+
         ArrayList<Articulo> resultado = new ArrayList<>() ;
 
-        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
-        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
-        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
-        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
-        resultado.add( new Articulo("cod10", "impresora", 2f, 1300.10f ));
+        resultado.add( new Articulo("cod10", "impresora", 1f, 800.10f ));
+        resultado.add( new Articulo("cod12", "monitor LCD", 2f, 1300.10f ));
 
         /*
 

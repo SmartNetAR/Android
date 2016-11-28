@@ -23,6 +23,7 @@ TODO:LISTA ARTICULOS
 public class EditaPedidoActivity extends AppCompatActivity {
 
     private int pos = -1 ;
+    private Pedido pedido ;
     private EditText edit_cliente ;
     private EditText edit_codigo ;
     private EditText edit_cantidad ;
@@ -52,9 +53,9 @@ public class EditaPedidoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         pos = intent.getIntExtra("pos", -1);
         if (pos != -1){
-            Pedido pedido = ListaPedidos.getPedido(pos) ;
-            edit_cliente.setText(pedido.getCliente().toString()) ;
-            edit_codigo.setText(pedido.getArticulos().toString()) ;
+            pedido = ListaPedidos.getPedido(pos) ;
+            //edit_cliente.setText(pedido.getCliente().toString()) ;
+            //edit_codigo.setText(pedido.getArticulos().toString()) ;
 
             /*edit_titulo.setText(nota.getTitulo());
             edit_texto.setText(nota.getTexto());
@@ -62,9 +63,27 @@ public class EditaPedidoActivity extends AppCompatActivity {
         }
     }
 
+    public void onAgregarArticulo(View view) {
+        ListaArticulosPedido.nuevo(
+                edit_codigo.getText().toString()
+                ,"desc",
+                Float.valueOf( edit_cantidad.getText().toString() ) ,
+                Float.valueOf( edit_importe.getText().toString() )
+        );
+
+                /*
+                edit_codigo.toString() ,
+                "una descripcion" ,
+                Float.valueOf(edit_cantidad.toString()) ,
+                Float.valueOf(edit_importe.toString())
+        );
+        */
+        adapter.notifyDataSetChanged();
+    }
+
     private class ArticulosPedidosAdapter extends ArrayAdapter<Articulo> {
         ArticulosPedidosAdapter() {
-            super(EditaPedidoActivity.this, R.layout.item_lista_edita_pedido, ListaArticulosPedido.get() );
+            super(EditaPedidoActivity.this, R.layout.item_lista_edita_pedido, ListaArticulosPedido.get( pedido ) );
 
         }
 
@@ -77,15 +96,15 @@ public class EditaPedidoActivity extends AppCompatActivity {
                 result = inflater.inflate(R.layout.item_lista_edita_pedido, parent, false);
             }
             Articulo articulo = getItem(position);
-            /*TextView titulo = (TextView) result.findViewById(R.id.titulo) ;
+            TextView titulo = (TextView) result.findViewById(R.id.titulo) ;
             titulo.setText(
-                    pedido.getCliente().toString() + "  $ " +
-                            (String) String.valueOf(pedido.getImporteTotal())
+                    articulo.getDescripcion() + "  $ " +
+                            (String) String.valueOf(articulo.getImporte())
             ) ;
             TextView resumen = (TextView) result.findViewById(R.id.resumen);
-            resumen.setText( pedido.Resumen() ) ;
+            resumen.setText( String.valueOf(articulo.getCantidad()) ) ;
             //(String) String.valueOf(pedido.getImporteTotal())) ;//.replace("\n", " "));
-            */
+
             return result ;
         }
     }

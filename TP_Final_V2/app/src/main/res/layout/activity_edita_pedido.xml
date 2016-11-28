@@ -93,7 +93,7 @@
             android:layout_height="match_parent"
             android:text="@string/add"
             android:layout_weight="1"
-            />
+            android:onClick="onAgregarArticulo" />
 
 
 
