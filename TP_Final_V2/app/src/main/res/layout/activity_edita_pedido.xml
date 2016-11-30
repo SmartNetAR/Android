@@ -99,10 +99,23 @@
 
     </LinearLayout>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lista_articulos_pedido" />
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:ems="10"
+            android:hint="@string/articleDescription"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:background="@android:color/transparent"
+            />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lista_articulos_pedido" />
 
     </LinearLayout>
 </RelativeLayout>

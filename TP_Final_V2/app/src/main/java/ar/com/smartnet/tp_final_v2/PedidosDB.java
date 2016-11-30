@@ -45,7 +45,7 @@ public class PedidosDB {
     }
 
     private static PedidosDbHelper helper;
-
+/*
     public static ArrayList<Pedido> loadNotas(Context context) {
         ArrayList<Pedido> resultado = new ArrayList<>();
 
@@ -67,7 +67,7 @@ public class PedidosDB {
 
                 articulos.add(new Articulo("cod1", "articulo 1", 2.0f, 12.20f ));
                 articulos.add(new Articulo("cod3", "articulo 3", 2.0f, 15.20f ));
-                resultado.add(new Pedido( 1 , new Cliente( 1 , "Leo Casales", "R.de Escalada", "223 4-213264"), articulos ) ) ;
+                resultado.add(new Pedido( new Cliente( 1 , "Leo Casales", "R.de Escalada", "223 4-213264"), fecha ) ) ;
 
             }
         }
@@ -78,5 +78,5 @@ public class PedidosDB {
 
         return resultado;
     }
-
+*/
 }

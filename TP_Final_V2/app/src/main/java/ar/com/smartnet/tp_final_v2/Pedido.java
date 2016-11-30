@@ -1,6 +1,8 @@
 package ar.com.smartnet.tp_final_v2;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 
 /**
  * Created by leo on 24/11/2016.
@@ -8,16 +10,16 @@ import java.util.ArrayList;
 
 public class Pedido {
     private int id ;
+    private Date fecha ;
     private Cliente cliente ;
-    private static ArrayList<Articulo> articulos ;
+    private ArrayList<ArticuloPedido> articulosPedido ;
     private float importeTotal ;
 
-    public Pedido(int id, Cliente cliente, ArrayList<Articulo> articulos) {
-        this.id = id;
+    public Pedido(Cliente cliente, Date fecha) {
+        this.fecha = fecha ;
         this.cliente = cliente;
-        this.articulos = new ArrayList<>();
-        this.articulos = articulos;
         this.importeTotal = 0f;
+        this.articulosPedido = new ArrayList<>() ;
     }
 
     public Cliente getCliente() {
@@ -32,8 +34,17 @@ public class Pedido {
         this.id = id;
     }
 
-    public static ArrayList<Articulo> getArticulos() {
-        return articulos;
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public ArrayList<ArticuloPedido> getArticulos( int id ) {
+        return articulosPedido;
+
     }
 
     public float getImporteTotal() {
@@ -44,8 +55,10 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public static void setArticulos(ArrayList<Articulo> articulos) {
-        Pedido.articulos = articulos;
+
+    public void addArticulo ( ArticuloPedido articuloPedido) {
+        this.articulosPedido.add( articuloPedido );
+
     }
 
     public void setImporteTotal(float importeTotal) {
@@ -58,6 +71,13 @@ public class Pedido {
     }
 
     public String Resumen () {
-        return this.articulos.toString();
+        String resultado ;
+
+        if ( this.articulosPedido == null) {
+            resultado = "resumen del pedido";
+        } else {
+            resultado = this.articulosPedido.toString();
+        }
+        return  resultado ;
     }
 }

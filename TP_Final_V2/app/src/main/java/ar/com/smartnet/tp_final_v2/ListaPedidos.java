@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PermissionInfo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by leo on 25/11/2016.
@@ -16,35 +17,43 @@ public class ListaPedidos {
         if (pedidos == null ) {
             pedidos = loadPedidos();
         }
+
         return pedidos ;
     }
 
-    public static void nueva(int id, Cliente cliente, ArrayList<Articulo> articulos) {
-        Pedido pedido = new Pedido(id, cliente, articulos);
+    public static void nuevo(Cliente cliente, Date fecha ) {
+        Pedido pedido = new Pedido( cliente, fecha ) ;
         pedidos.add( pedido );
     }
 
-    public static void modifica(int id, Cliente cliente, float importe ) {
+    public static void modifica( int id, Cliente cliente, Date fecha ) {
         Pedido pedido = pedidos.get( id );
         pedido.setCliente( cliente );
-        pedido.setImporteTotal( importe );
+        pedido.setFecha( fecha );
     }
 
+
     public static ArrayList<Pedido> loadPedidos() {
+        Date fecha = new Date() ;
+        Cliente cliente ;
+        Pedido pedido ;
         ArrayList<Pedido> resultado = new ArrayList<>() ;
-        ArrayList<Articulo> articulos = new ArrayList<>() ;
 
-        articulos.add(new Articulo("cod1", "articulo 1", 2.0f, 12.20f ));
-        articulos.add(new Articulo("cod3", "articulo 3", 2.0f, 15.20f ));
-        resultado.add(new Pedido( 1 , new Cliente( 1 , "Leo Casales", "R.de Escalada", "223 4-213264"), articulos ) ) ;
+        cliente = new Cliente( 1 , "Leo Casales", "R.de Escalada", "223 4-213264" ) ;
+        pedido = new Pedido( cliente, fecha ) ;
+        pedido.addArticulo( new ArticuloPedido( 1, "cod10", 10f, 100f, 1 ));
+        pedido.addArticulo( new ArticuloPedido( 2, "cod11", 5f, 200f, 1 ));
+        resultado.add ( pedido ) ;
 
-        ArrayList<Articulo> articulos2 = new ArrayList<>() ;
-        articulos2.add(new Articulo("cod2", "teclado USB", 2.0f, 12.20f ));
-        articulos2.add(new Articulo("cod4", "mouse USB", 1.0f, 9.20f ));
-        resultado.add(new Pedido( 2 , new Cliente( 2 , "Tizi Casales", "Mar del Plata", "470-1520" ), articulos2  ) ) ;
+        cliente = new Cliente( 1 , "Tiziano Casales", "R.de Escalada", "470-1520" ) ;
+        pedido = new Pedido( cliente, fecha ) ;
+        pedido.addArticulo( new ArticuloPedido( 1, "cod12", 2f, 120f, 2 ));
+        pedido.addArticulo( new ArticuloPedido( 2, "cod20", 2f, 600f, 2 ));
+        resultado.add ( pedido ) ;
 
         return resultado ;
     }
+
 
     public static Pedido getPedido(int pos){
         return pedidos.get(pos);
